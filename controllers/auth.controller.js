@@ -123,13 +123,17 @@ export const logoutUser = async (req, res) => {
 
 export const updateProfile = async (req, res) => {
     try {
-        const { name } = req.body;
+        const { name, email } = req.body;
 
-        if (!name) return res.status(400).json({ message: "Name is required" });
+        if (!name || !email) {
+            return res.status(400).json({
+                message: "Name and Email are required"
+            });
+        }
 
         const updatedUser = await User.findByIdAndUpdate(
             req.user._id,
-            { name },
+            { name, email },
             { new: true }
         );
 

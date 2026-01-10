@@ -1,37 +1,47 @@
-Spotify Clone – Full Stack MERN Application
+# 🎵 Spotify Clone – Backend
 
-This is a full-stack music streaming web application inspired by Spotify.
-The project is built using the MERN stack and includes authentication, audio streaming, seller uploads, and role-based access.
+This is the backend API for a Spotify-like music streaming platform built with **Node.js**, **Express**, and **MongoDB**.
 
 ---
 
 ## 🚀 Tech Stack
 
-**Frontend:**
-- React.js
-- React Router
-- Axios
-- CSS
-
-**Backend:**
 - Node.js
 - Express.js
-- MongoDB
-- Mongoose
+- MongoDB + Mongoose
 - JWT Authentication
-- Multer (for audio uploads)
+- Cookie-parser
+- Multer (file uploads)
+- Cloudinary (media storage)
 
 ---
 
 ## ✨ Features
 
-- User authentication (Login / Register)
-- JWT-based secure authentication
-- Sellers can upload songs with audio and cover images
-- Songs are stored and linked with the seller account
-- Users can browse and play songs in an audio player
-- Protected routes for sellers
-- CRUD operations for songs
-- Clean UI similar to Spotify
+### 🔐 Authentication
+- Register & Login
+- JWT-based authentication
+- Secure cookies
+- Role-based access (User / Seller / Admin)
+
+### 🧑‍🎤 Seller APIs
+- Upload songs
+- View own songs
+- Edit songs
+- Delete songs
+- Seller dashboard stats
+
+### 🛡️ Admin APIs
+- View all songs
+- Delete any song
+- View all artists
+- View all sellers
+- Admin-only protected routes
+
+### 🎶 Songs & Artists
+- Fetch all songs
+- Fetch songs by artist
+- Play count tracking
+- Like count tracking
 
 ---

@@ -7,7 +7,8 @@ import mainRouter from "./routes/index.js";
 import sellerRoutes from "./routes/seller.routes.js";
 import artistRoutes from "./routes/artist.routes.js";
 import songRoutes from "./routes/song.routes.js";
-import playlistRoutes from "./routes/playlist.routes.js";
+import playlistRoutes from "./routes/playlist.routes.js"; 
+import adminRoutes from "./routes/admin.routes.js";
 
 dotenv.config();
 
@@ -29,6 +30,8 @@ app.use("/uploads", express.static("uploads"));
 app.use("/api/artists", artistRoutes);
 app.use("/api/songs", songRoutes);
 app.use("/api/playlists", playlistRoutes);
+app.use("/api/admin", adminRoutes);
+
 
 mongoose
     .connect(process.env.MONGODB_URL)
