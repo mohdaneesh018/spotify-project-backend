@@ -6,11 +6,15 @@ import { deleteSong, getMySongs, getSingleSong, updateSong, uploadSong } from ".
 import Song from "../model/song.model.js";
 
 const router = express.Router();
+const __dirname = path.resolve();
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, "./uploads"),
-    filename: (req, file, cb) =>
-        cb(null, Date.now() + path.extname(file.originalname)),
+    destination: (req, file, cb) => {
+        cb(null, path.join(__dirname, "uploads"));
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname));
+    },
 });
 
 const upload = multer({ storage });
@@ -21,7 +25,7 @@ router.get("/my-songs", auth, isSeller, getMySongs);
 
 router.get("/song/:id", auth, isSeller, getSingleSong);
 
-router.put("/update-song/:id", auth, isSeller, upload.single("audio"), updateSong);
+router.put("/update-song/:id", auth, isSeller, ingle("audio"), updateSong);
 
 router.put("/increase-play/:id", auth, isSeller, async (req, res) => {
     try {
