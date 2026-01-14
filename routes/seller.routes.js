@@ -25,7 +25,7 @@ router.get("/my-songs", auth, isSeller, getMySongs);
 
 router.get("/song/:id", auth, isSeller, getSingleSong);
 
-router.put("/update-song/:id", auth, isSeller, ingle("audio"), updateSong);
+router.put("/update-song/:id", auth, isSeller, single("audio"), updateSong);
 
 router.put("/increase-play/:id", auth, isSeller, async (req, res) => {
     try {
